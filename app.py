@@ -102,6 +102,3 @@ def contact_message():
 
     except Exception as e:
         return jsonify({'status': 'error', 'message': 'Internal server error!'}), 500
-
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000)
