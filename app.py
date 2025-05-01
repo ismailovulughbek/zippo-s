@@ -4,6 +4,10 @@ import requests
 import logging
 from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 app = Flask(__name__)
 CORS(app)
@@ -54,12 +58,12 @@ def intro_message():
 
         text = f"📬 *NEW MESSAGE!*\n\n👤 Name: {name}\n📧 Email: {email}\n📞 Phone: {phone}\n🏥 Service: {service}"
         payload = {
-            'chat_id': TELEGRAM_CHAT_ID,
+            'chat_id': os.getenv("TELEGRAM_CHAT_ID"),
             'text': text,
             'parse_mode': 'Markdown'
         }
 
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+        url = f"https://api.telegram.org/bot{os.getenv("TELEGRAM_BOT_TOKEN")}/sendMessage"
         response = requests.post(url, data=payload)
         
         if response.status_code != 200:
@@ -87,12 +91,12 @@ def contact_message():
 
         text = f"📬 *NEW MESSAGE!*\n\n👤 Name: {name}\n📧 Email: {email}\n📞 Phone: {phone}\n📌 Subject: {subject}\n\n📝 Message: {message}"
         payload = {
-            'chat_id': TELEGRAM_CHAT_ID,
+            'chat_id': os.getenv("TELEGRAM_CHAT_ID"),
             'text': text,
             'parse_mode': 'Markdown'
         }
 
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+        url = f"https://api.telegram.org/bot{os.getenv("TELEGRAM_BOT_TOKEN")}/sendMessage"
         response = requests.post(url, data=payload)
         
         if response.status_code != 200:
