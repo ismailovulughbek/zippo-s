@@ -58,12 +58,13 @@ def intro_message():
 
         text = f"📬 *NEW MESSAGE!*\n\n👤 Name: {name}\n📧 Email: {email}\n📞 Phone: {phone}\n🏥 Service: {service}"
         payload = {
-            'chat_id': os.getenv('TELEGRAM_CHAT_ID'),
+            'chat_id': -1002508065390,
             'text': text,
             'parse_mode': 'Markdown'
         }
 
-        url = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage"
+        # url = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage"
+        url = f"https://api.telegram.org/bot7819795077:AAGlJ4reLZvPVe7ATF2sMOvEl2aOakWcyzc/sendMessage"
         response = requests.post(url, data=payload)
         
         if response.status_code != 200:
@@ -91,12 +92,13 @@ def contact_message():
 
         text = f"📬 *NEW MESSAGE!*\n\n👤 Name: {name}\n📧 Email: {email}\n📞 Phone: {phone}\n📌 Subject: {subject}\n\n📝 Message: {message}"
         payload = {
-            'chat_id': os.getenv('TELEGRAM_CHAT_ID'),
+            'chat_id': -1002508065390,
             'text': text,
             'parse_mode': 'Markdown'
         }
 
-        url = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage"
+        # url = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage"
+        url = f"https://api.telegram.org/bot7819795077:AAGlJ4reLZvPVe7ATF2sMOvEl2aOakWcyzc/sendMessage"
         response = requests.post(url, data=payload)
         
         if response.status_code != 200:
