@@ -19,9 +19,15 @@ if not os.path.exists('logs'):
 #                     level=logging.INFO,
 #                     format='%(asctime)s %(levelname)s %(message)s')
 
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -29,12 +35,15 @@ def about():
 @app.route('/services')
 def services():
     return render_template('services.html')
+
 @app.route('/ser-human')
 def ser_human():
     return render_template('ser-human.html')
+
 @app.route('/ser-wellness')
 def ser_wellness():
     return render_template('ser-wellness.html')
+
 @app.route('/ser-laboratory')
 def ser_laboratory():
     return render_template('ser-laboratory.html')
