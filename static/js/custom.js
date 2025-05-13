@@ -155,12 +155,17 @@ function scrollToTop() {
 
 
 // ===Prealoder===
+// function prealoader() {
+//     if($('.preloader').length){
+//         $('.preloader').delay(2000).fadeOut(500);
+//     }
+// }
+
 function prealoader() {
-    if($('.preloader').length){
-        $('.preloader').delay(2000).fadeOut(500);
+    if ($('.preloader').length) {
+        $('.preloader').fadeOut(300);
     }
 }
-
 
 
 
