@@ -1073,14 +1073,6 @@ select:focus {
     justify-content: center;
     position: relative;
     padding: 20px;
-/* 
-    background-image: url('../images/slides/1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-    filter: brightness(0.6); */
-
 }
 
 .hero::before {
@@ -1092,6 +1084,19 @@ select:focus {
     background-position: center;
     background-repeat: no-repeat;
     filter: brightness(0.8);
+}
+
+@media (max-width: 900px) {
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url('../images/slides/mobile1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: brightness(0.8);
+    }
 }
 
 .hero .container {
